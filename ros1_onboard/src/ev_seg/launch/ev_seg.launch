@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- visualization -->
+  <node name="ev_seg" pkg="ev_seg" type="segmentation.py" output="screen">
+    <!-- <param name="display_method" value="red-blue"/> -->
+    <!-- <remap from="event_frame" to="event_frame" /> -->
+  </node>
+
+
+  <!-- display -->
+  <node name="image_view_left" pkg="rqt_image_view" type="rqt_image_view">
+  	<remap from="image" to="event_frame"/>
+  </node>
+
+</launch>
